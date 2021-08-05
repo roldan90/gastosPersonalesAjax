@@ -9,7 +9,7 @@
 
     <!-- Seccion de contenido -->
 
-    
+        
     <!-- Termina Seccion de contenido -->
 
 <?php include "footer.php"; ?>
