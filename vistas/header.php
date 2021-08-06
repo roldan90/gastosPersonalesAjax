@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="../public/fontawesome/css/all.css">
         <link rel="stylesheet" href="../public/datatable/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="../public/datatable/buttons.dataTables.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container"><!--Aqui comienza el container de la plantilla-->

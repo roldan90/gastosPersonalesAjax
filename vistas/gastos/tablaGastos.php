@@ -19,19 +19,12 @@
 ?>
 
 <style>
-    .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.tabla-estilo {
+    background-color:white;font-family: 'Roboto', sans-serif;
 }
 </style>
 
-<table class="table table-bordered" style="background-color:white" id="datatableGastos">
+<table class="table table-hover table-bordered tabla-estilo table-condensed table-sm" id="datatableGastos">
     <thead>
         <tr>
             <th>Categoria</th>
@@ -48,8 +41,8 @@
         ?>
         <tr>
             <td><?php echo $mostrar['categoria'];?></td>
-            <td><?php echo $mostrar['monto'];?></td>
             <td><?php echo $mostrar['descripcion'];?></td>
+            <td><?php echo $mostrar['monto'];?></td>
             <td><?php echo $mostrar['fecha'];?></td>
             <td class="text-center">
                 <button class="btn btn-warning btn-sm">
@@ -58,7 +51,7 @@
             </td>
             <td class="text-center">
                 <button class="btn btn-danger btn-sm">
-                <span class="fas fa-dumpster-fire"></span>
+                <span class="fas fa-fire-alt"></span>
                 </button>
             </td>
         </tr>
@@ -102,8 +95,8 @@ $(document).ready(function() {
                     },
                 "search": "Buscar:"    
         }
-    } );
-} );
+    });
+});
 
 
 
