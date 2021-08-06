@@ -33,7 +33,10 @@
         </p>
     </div>
 
-    <?php include "gastos/modalAgregar.php"; ?>
+    <?php 
+        include "gastos/modalAgregar.php"; 
+        include "gastos/modalActualizar.php"; 
+    ?>
     
     <!-- Termina Seccion de contenido -->
 <?php include "footer.php"; ?>

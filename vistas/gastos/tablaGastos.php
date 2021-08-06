@@ -45,13 +45,17 @@
             <td><?php echo $mostrar['monto'];?></td>
             <td><?php echo $mostrar['fecha'];?></td>
             <td class="text-center">
-                <button class="btn btn-warning btn-sm">
+                <button 
+                    class="btn btn-warning btn-sm" 
+                    data-toggle="modal" 
+                    data-target="#modalActualizarGasto" 
+                    onclick='obtenerDatosGasto(<?php echo $mostrar["idGasto"] ?>)'>
                     <span class="fas fa-edit"></span>
                 </button>
             </td>
             <td class="text-center">
-                <button class="btn btn-danger btn-sm">
-                <span class="fas fa-fire-alt"></span>
+                <button class="btn btn-danger btn-sm" onclick="eliminarGasto(<?php echo $mostrar['idGasto'] ?>)">
+                    <span class="fas fa-fire-alt"></span>
                 </button>
             </td>
         </tr>
