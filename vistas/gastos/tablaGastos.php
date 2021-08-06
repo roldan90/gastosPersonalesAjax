@@ -18,6 +18,19 @@
     $respuesta = mysqli_query($conexion, $sql);
 ?>
 
+<style>
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+
 <table class="table table-bordered" style="background-color:white" id="datatableGastos">
     <thead>
         <tr>
@@ -38,13 +51,13 @@
             <td><?php echo $mostrar['monto'];?></td>
             <td><?php echo $mostrar['descripcion'];?></td>
             <td><?php echo $mostrar['fecha'];?></td>
-            <td>
-                <button class="btn btn-warning">
+            <td class="text-center">
+                <button class="btn btn-warning btn-sm">
                     <span class="fas fa-edit"></span>
                 </button>
             </td>
-            <td>
-                <button class="btn btn-danger">
+            <td class="text-center">
+                <button class="btn btn-danger btn-sm">
                 <span class="fas fa-dumpster-fire"></span>
                 </button>
             </td>
@@ -56,16 +69,42 @@
 </table>
 
 <script>
-    $(document).ready(function(){
-        $('#datatableGastos').DataTable({
-            dom: 'Bfrtip',
+
+
+
+$(document).ready(function() {
+    $('#datatableGastos').DataTable( {
+        dom: 'Bfrtip',
+        buttons: {
             buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5'
-                
-            ]
-        });
-    });
+                { extend: 'copy', className: 'btn btn-outline-info' , text : '<li class="fas fa-copy"></li> Copiar' },
+                { extend: 'excel', className: 'btn btn-outline-success', text: '<li class="fas fa-file-excel"></li> Excel'},
+                { extend: 'csv', className: 'btn btn-outline-secondary', text: '<li class="fas fa-file-csv"></li> CSV'},
+                { extend: 'pdf', className: 'btn btn-outline-danger', text: '<li class="fas fa-file-pdf"></li> Pdf'}
+            ],
+            dom: {
+                button: {
+                    className: 'btn'
+                }
+            }
+        },
+        "language": {
+                "lengthMenu": "Muestra _MENU_ registros por pagína",
+                "sZeroRecords":    "No se encontraron resultados",
+                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                "search": "Buscar:"    
+        }
+    } );
+} );
+
+
+
 </script>
